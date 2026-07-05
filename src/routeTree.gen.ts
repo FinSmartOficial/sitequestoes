@@ -9,69 +9,1041 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as DashboardRouteImport } from './routes/dashboard'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AppRouteImport } from './routes/_app'
+import { Route as AppIndexRouteImport } from './routes/_app.index'
+import { Route as PerfilUsernameRouteImport } from './routes/perfil.$username'
+import { Route as AppSimuladosRouteImport } from './routes/_app.simulados'
+import { Route as AppRevisoesRouteImport } from './routes/_app.revisoes'
+import { Route as AppRecompensasHistoricoRouteImport } from './routes/_app.recompensas-historico'
+import { Route as AppRecompensasDesempenhoRouteImport } from './routes/_app.recompensas-desempenho'
+import { Route as AppRecomendacoesRouteImport } from './routes/_app.recomendacoes'
+import { Route as AppRankingsRouteImport } from './routes/_app.rankings'
+import { Route as AppQuestoesRouteImport } from './routes/_app.questoes'
+import { Route as AppPerfilRouteImport } from './routes/_app.perfil'
+import { Route as AppMissoesRouteImport } from './routes/_app.missoes'
+import { Route as AppInsigniasRouteImport } from './routes/_app.insignias'
+import { Route as AppHistoricoRouteImport } from './routes/_app.historico'
+import { Route as AppEstatisticasRouteImport } from './routes/_app.estatisticas'
+import { Route as AppEditaisRouteImport } from './routes/_app.editais'
+import { Route as AppCronometroRouteImport } from './routes/_app.cronometro'
+import { Route as AppConquistasRouteImport } from './routes/_app.conquistas'
+import { Route as AppConfiguracoesRouteImport } from './routes/_app.configuracoes'
+import { Route as AppCicloRouteImport } from './routes/_app.ciclo'
+import { Route as AppCalendarioRouteImport } from './routes/_app.calendario'
+import { Route as AppCadernosRouteImport } from './routes/_app.cadernos'
+import { Route as AppAmigosRouteImport } from './routes/_app.amigos'
+import { Route as AppAdminRouteImport } from './routes/_app.admin'
+import { Route as AppArenaIndexRouteImport } from './routes/_app.arena.index'
+import { Route as AppAdminIndexRouteImport } from './routes/_app.admin.index'
+import { Route as AppSimuladosIdRouteImport } from './routes/_app.simulados.$id'
+import { Route as AppEditaisIdRouteImport } from './routes/_app.editais.$id'
+import { Route as AppCadernosIdRouteImport } from './routes/_app.cadernos.$id'
+import { Route as AppArenaSalaIdRouteImport } from './routes/_app.arena.$salaId'
+import { Route as AppAdminUsuariosRouteImport } from './routes/_app.admin.usuarios'
+import { Route as AppAdminRankingsRouteImport } from './routes/_app.admin.rankings'
+import { Route as AppAdminQuestoesRouteImport } from './routes/_app.admin.questoes'
+import { Route as AppAdminQualidadeRouteImport } from './routes/_app.admin.qualidade'
+import { Route as AppAdminQreRouteImport } from './routes/_app.admin.qre'
+import { Route as AppAdminMissoesRouteImport } from './routes/_app.admin.missoes'
+import { Route as AppAdminLogsRouteImport } from './routes/_app.admin.logs'
+import { Route as AppAdminExplicacoesRouteImport } from './routes/_app.admin.explicacoes'
+import { Route as AppAdminEditaisRouteImport } from './routes/_app.admin.editais'
+import { Route as AppAdminDisciplinasRouteImport } from './routes/_app.admin.disciplinas'
+import { Route as AppAdminConquistasRouteImport } from './routes/_app.admin.conquistas'
+import { Route as AppAdminConfiguracoesRouteImport } from './routes/_app.admin.configuracoes'
+import { Route as AppAdminArenaRouteImport } from './routes/_app.admin.arena'
+import { Route as AppSimuladosIdRelatorioRouteImport } from './routes/_app.simulados.$id.relatorio'
 
-const DashboardRoute = DashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
+const AppRoute = AppRouteImport.update({
+  id: '/_app',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppIndexRoute = AppIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => AppRoute,
+} as any)
+const PerfilUsernameRoute = PerfilUsernameRouteImport.update({
+  id: '/perfil/$username',
+  path: '/perfil/$username',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AppSimuladosRoute = AppSimuladosRouteImport.update({
+  id: '/simulados',
+  path: '/simulados',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRevisoesRoute = AppRevisoesRouteImport.update({
+  id: '/revisoes',
+  path: '/revisoes',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRecompensasHistoricoRoute = AppRecompensasHistoricoRouteImport.update({
+  id: '/recompensas-historico',
+  path: '/recompensas-historico',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRecompensasDesempenhoRoute =
+  AppRecompensasDesempenhoRouteImport.update({
+    id: '/recompensas-desempenho',
+    path: '/recompensas-desempenho',
+    getParentRoute: () => AppRoute,
+  } as any)
+const AppRecomendacoesRoute = AppRecomendacoesRouteImport.update({
+  id: '/recomendacoes',
+  path: '/recomendacoes',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRankingsRoute = AppRankingsRouteImport.update({
+  id: '/rankings',
+  path: '/rankings',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppQuestoesRoute = AppQuestoesRouteImport.update({
+  id: '/questoes',
+  path: '/questoes',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPerfilRoute = AppPerfilRouteImport.update({
+  id: '/perfil',
+  path: '/perfil',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppMissoesRoute = AppMissoesRouteImport.update({
+  id: '/missoes',
+  path: '/missoes',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppInsigniasRoute = AppInsigniasRouteImport.update({
+  id: '/insignias',
+  path: '/insignias',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppHistoricoRoute = AppHistoricoRouteImport.update({
+  id: '/historico',
+  path: '/historico',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppEstatisticasRoute = AppEstatisticasRouteImport.update({
+  id: '/estatisticas',
+  path: '/estatisticas',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppEditaisRoute = AppEditaisRouteImport.update({
+  id: '/editais',
+  path: '/editais',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCronometroRoute = AppCronometroRouteImport.update({
+  id: '/cronometro',
+  path: '/cronometro',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppConquistasRoute = AppConquistasRouteImport.update({
+  id: '/conquistas',
+  path: '/conquistas',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppConfiguracoesRoute = AppConfiguracoesRouteImport.update({
+  id: '/configuracoes',
+  path: '/configuracoes',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCicloRoute = AppCicloRouteImport.update({
+  id: '/ciclo',
+  path: '/ciclo',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCalendarioRoute = AppCalendarioRouteImport.update({
+  id: '/calendario',
+  path: '/calendario',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCadernosRoute = AppCadernosRouteImport.update({
+  id: '/cadernos',
+  path: '/cadernos',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAmigosRoute = AppAmigosRouteImport.update({
+  id: '/amigos',
+  path: '/amigos',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAdminRoute = AppAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppArenaIndexRoute = AppArenaIndexRouteImport.update({
+  id: '/arena/',
+  path: '/arena/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAdminIndexRoute = AppAdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppSimuladosIdRoute = AppSimuladosIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => AppSimuladosRoute,
+} as any)
+const AppEditaisIdRoute = AppEditaisIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => AppEditaisRoute,
+} as any)
+const AppCadernosIdRoute = AppCadernosIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => AppCadernosRoute,
+} as any)
+const AppArenaSalaIdRoute = AppArenaSalaIdRouteImport.update({
+  id: '/arena/$salaId',
+  path: '/arena/$salaId',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAdminUsuariosRoute = AppAdminUsuariosRouteImport.update({
+  id: '/usuarios',
+  path: '/usuarios',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminRankingsRoute = AppAdminRankingsRouteImport.update({
+  id: '/rankings',
+  path: '/rankings',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminQuestoesRoute = AppAdminQuestoesRouteImport.update({
+  id: '/questoes',
+  path: '/questoes',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminQualidadeRoute = AppAdminQualidadeRouteImport.update({
+  id: '/qualidade',
+  path: '/qualidade',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminQreRoute = AppAdminQreRouteImport.update({
+  id: '/qre',
+  path: '/qre',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminMissoesRoute = AppAdminMissoesRouteImport.update({
+  id: '/missoes',
+  path: '/missoes',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminLogsRoute = AppAdminLogsRouteImport.update({
+  id: '/logs',
+  path: '/logs',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminExplicacoesRoute = AppAdminExplicacoesRouteImport.update({
+  id: '/explicacoes',
+  path: '/explicacoes',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminEditaisRoute = AppAdminEditaisRouteImport.update({
+  id: '/editais',
+  path: '/editais',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminDisciplinasRoute = AppAdminDisciplinasRouteImport.update({
+  id: '/disciplinas',
+  path: '/disciplinas',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminConquistasRoute = AppAdminConquistasRouteImport.update({
+  id: '/conquistas',
+  path: '/conquistas',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminConfiguracoesRoute = AppAdminConfiguracoesRouteImport.update({
+  id: '/configuracoes',
+  path: '/configuracoes',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppAdminArenaRoute = AppAdminArenaRouteImport.update({
+  id: '/arena',
+  path: '/arena',
+  getParentRoute: () => AppAdminRoute,
+} as any)
+const AppSimuladosIdRelatorioRoute = AppSimuladosIdRelatorioRouteImport.update({
+  id: '/relatorio',
+  path: '/relatorio',
+  getParentRoute: () => AppSimuladosIdRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRoute
+  '/': typeof AppIndexRoute
+  '/auth': typeof AuthRoute
+  '/admin': typeof AppAdminRouteWithChildren
+  '/amigos': typeof AppAmigosRoute
+  '/cadernos': typeof AppCadernosRouteWithChildren
+  '/calendario': typeof AppCalendarioRoute
+  '/ciclo': typeof AppCicloRoute
+  '/configuracoes': typeof AppConfiguracoesRoute
+  '/conquistas': typeof AppConquistasRoute
+  '/cronometro': typeof AppCronometroRoute
+  '/editais': typeof AppEditaisRouteWithChildren
+  '/estatisticas': typeof AppEstatisticasRoute
+  '/historico': typeof AppHistoricoRoute
+  '/insignias': typeof AppInsigniasRoute
+  '/missoes': typeof AppMissoesRoute
+  '/perfil': typeof AppPerfilRoute
+  '/questoes': typeof AppQuestoesRoute
+  '/rankings': typeof AppRankingsRoute
+  '/recomendacoes': typeof AppRecomendacoesRoute
+  '/recompensas-desempenho': typeof AppRecompensasDesempenhoRoute
+  '/recompensas-historico': typeof AppRecompensasHistoricoRoute
+  '/revisoes': typeof AppRevisoesRoute
+  '/simulados': typeof AppSimuladosRouteWithChildren
+  '/perfil/$username': typeof PerfilUsernameRoute
+  '/admin/arena': typeof AppAdminArenaRoute
+  '/admin/configuracoes': typeof AppAdminConfiguracoesRoute
+  '/admin/conquistas': typeof AppAdminConquistasRoute
+  '/admin/disciplinas': typeof AppAdminDisciplinasRoute
+  '/admin/editais': typeof AppAdminEditaisRoute
+  '/admin/explicacoes': typeof AppAdminExplicacoesRoute
+  '/admin/logs': typeof AppAdminLogsRoute
+  '/admin/missoes': typeof AppAdminMissoesRoute
+  '/admin/qre': typeof AppAdminQreRoute
+  '/admin/qualidade': typeof AppAdminQualidadeRoute
+  '/admin/questoes': typeof AppAdminQuestoesRoute
+  '/admin/rankings': typeof AppAdminRankingsRoute
+  '/admin/usuarios': typeof AppAdminUsuariosRoute
+  '/arena/$salaId': typeof AppArenaSalaIdRoute
+  '/cadernos/$id': typeof AppCadernosIdRoute
+  '/editais/$id': typeof AppEditaisIdRoute
+  '/simulados/$id': typeof AppSimuladosIdRouteWithChildren
+  '/admin/': typeof AppAdminIndexRoute
+  '/arena/': typeof AppArenaIndexRoute
+  '/simulados/$id/relatorio': typeof AppSimuladosIdRelatorioRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRoute
+  '/auth': typeof AuthRoute
+  '/amigos': typeof AppAmigosRoute
+  '/cadernos': typeof AppCadernosRouteWithChildren
+  '/calendario': typeof AppCalendarioRoute
+  '/ciclo': typeof AppCicloRoute
+  '/configuracoes': typeof AppConfiguracoesRoute
+  '/conquistas': typeof AppConquistasRoute
+  '/cronometro': typeof AppCronometroRoute
+  '/editais': typeof AppEditaisRouteWithChildren
+  '/estatisticas': typeof AppEstatisticasRoute
+  '/historico': typeof AppHistoricoRoute
+  '/insignias': typeof AppInsigniasRoute
+  '/missoes': typeof AppMissoesRoute
+  '/perfil': typeof AppPerfilRoute
+  '/questoes': typeof AppQuestoesRoute
+  '/rankings': typeof AppRankingsRoute
+  '/recomendacoes': typeof AppRecomendacoesRoute
+  '/recompensas-desempenho': typeof AppRecompensasDesempenhoRoute
+  '/recompensas-historico': typeof AppRecompensasHistoricoRoute
+  '/revisoes': typeof AppRevisoesRoute
+  '/simulados': typeof AppSimuladosRouteWithChildren
+  '/perfil/$username': typeof PerfilUsernameRoute
+  '/': typeof AppIndexRoute
+  '/admin/arena': typeof AppAdminArenaRoute
+  '/admin/configuracoes': typeof AppAdminConfiguracoesRoute
+  '/admin/conquistas': typeof AppAdminConquistasRoute
+  '/admin/disciplinas': typeof AppAdminDisciplinasRoute
+  '/admin/editais': typeof AppAdminEditaisRoute
+  '/admin/explicacoes': typeof AppAdminExplicacoesRoute
+  '/admin/logs': typeof AppAdminLogsRoute
+  '/admin/missoes': typeof AppAdminMissoesRoute
+  '/admin/qre': typeof AppAdminQreRoute
+  '/admin/qualidade': typeof AppAdminQualidadeRoute
+  '/admin/questoes': typeof AppAdminQuestoesRoute
+  '/admin/rankings': typeof AppAdminRankingsRoute
+  '/admin/usuarios': typeof AppAdminUsuariosRoute
+  '/arena/$salaId': typeof AppArenaSalaIdRoute
+  '/cadernos/$id': typeof AppCadernosIdRoute
+  '/editais/$id': typeof AppEditaisIdRoute
+  '/simulados/$id': typeof AppSimuladosIdRouteWithChildren
+  '/admin': typeof AppAdminIndexRoute
+  '/arena': typeof AppArenaIndexRoute
+  '/simulados/$id/relatorio': typeof AppSimuladosIdRelatorioRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/dashboard': typeof DashboardRoute
+  '/_app': typeof AppRouteWithChildren
+  '/auth': typeof AuthRoute
+  '/_app/admin': typeof AppAdminRouteWithChildren
+  '/_app/amigos': typeof AppAmigosRoute
+  '/_app/cadernos': typeof AppCadernosRouteWithChildren
+  '/_app/calendario': typeof AppCalendarioRoute
+  '/_app/ciclo': typeof AppCicloRoute
+  '/_app/configuracoes': typeof AppConfiguracoesRoute
+  '/_app/conquistas': typeof AppConquistasRoute
+  '/_app/cronometro': typeof AppCronometroRoute
+  '/_app/editais': typeof AppEditaisRouteWithChildren
+  '/_app/estatisticas': typeof AppEstatisticasRoute
+  '/_app/historico': typeof AppHistoricoRoute
+  '/_app/insignias': typeof AppInsigniasRoute
+  '/_app/missoes': typeof AppMissoesRoute
+  '/_app/perfil': typeof AppPerfilRoute
+  '/_app/questoes': typeof AppQuestoesRoute
+  '/_app/rankings': typeof AppRankingsRoute
+  '/_app/recomendacoes': typeof AppRecomendacoesRoute
+  '/_app/recompensas-desempenho': typeof AppRecompensasDesempenhoRoute
+  '/_app/recompensas-historico': typeof AppRecompensasHistoricoRoute
+  '/_app/revisoes': typeof AppRevisoesRoute
+  '/_app/simulados': typeof AppSimuladosRouteWithChildren
+  '/perfil/$username': typeof PerfilUsernameRoute
+  '/_app/': typeof AppIndexRoute
+  '/_app/admin/arena': typeof AppAdminArenaRoute
+  '/_app/admin/configuracoes': typeof AppAdminConfiguracoesRoute
+  '/_app/admin/conquistas': typeof AppAdminConquistasRoute
+  '/_app/admin/disciplinas': typeof AppAdminDisciplinasRoute
+  '/_app/admin/editais': typeof AppAdminEditaisRoute
+  '/_app/admin/explicacoes': typeof AppAdminExplicacoesRoute
+  '/_app/admin/logs': typeof AppAdminLogsRoute
+  '/_app/admin/missoes': typeof AppAdminMissoesRoute
+  '/_app/admin/qre': typeof AppAdminQreRoute
+  '/_app/admin/qualidade': typeof AppAdminQualidadeRoute
+  '/_app/admin/questoes': typeof AppAdminQuestoesRoute
+  '/_app/admin/rankings': typeof AppAdminRankingsRoute
+  '/_app/admin/usuarios': typeof AppAdminUsuariosRoute
+  '/_app/arena/$salaId': typeof AppArenaSalaIdRoute
+  '/_app/cadernos/$id': typeof AppCadernosIdRoute
+  '/_app/editais/$id': typeof AppEditaisIdRoute
+  '/_app/simulados/$id': typeof AppSimuladosIdRouteWithChildren
+  '/_app/admin/': typeof AppAdminIndexRoute
+  '/_app/arena/': typeof AppArenaIndexRoute
+  '/_app/simulados/$id/relatorio': typeof AppSimuladosIdRelatorioRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dashboard'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/admin'
+    | '/amigos'
+    | '/cadernos'
+    | '/calendario'
+    | '/ciclo'
+    | '/configuracoes'
+    | '/conquistas'
+    | '/cronometro'
+    | '/editais'
+    | '/estatisticas'
+    | '/historico'
+    | '/insignias'
+    | '/missoes'
+    | '/perfil'
+    | '/questoes'
+    | '/rankings'
+    | '/recomendacoes'
+    | '/recompensas-desempenho'
+    | '/recompensas-historico'
+    | '/revisoes'
+    | '/simulados'
+    | '/perfil/$username'
+    | '/admin/arena'
+    | '/admin/configuracoes'
+    | '/admin/conquistas'
+    | '/admin/disciplinas'
+    | '/admin/editais'
+    | '/admin/explicacoes'
+    | '/admin/logs'
+    | '/admin/missoes'
+    | '/admin/qre'
+    | '/admin/qualidade'
+    | '/admin/questoes'
+    | '/admin/rankings'
+    | '/admin/usuarios'
+    | '/arena/$salaId'
+    | '/cadernos/$id'
+    | '/editais/$id'
+    | '/simulados/$id'
+    | '/admin/'
+    | '/arena/'
+    | '/simulados/$id/relatorio'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dashboard'
-  id: '__root__' | '/' | '/dashboard'
+  to:
+    | '/auth'
+    | '/amigos'
+    | '/cadernos'
+    | '/calendario'
+    | '/ciclo'
+    | '/configuracoes'
+    | '/conquistas'
+    | '/cronometro'
+    | '/editais'
+    | '/estatisticas'
+    | '/historico'
+    | '/insignias'
+    | '/missoes'
+    | '/perfil'
+    | '/questoes'
+    | '/rankings'
+    | '/recomendacoes'
+    | '/recompensas-desempenho'
+    | '/recompensas-historico'
+    | '/revisoes'
+    | '/simulados'
+    | '/perfil/$username'
+    | '/'
+    | '/admin/arena'
+    | '/admin/configuracoes'
+    | '/admin/conquistas'
+    | '/admin/disciplinas'
+    | '/admin/editais'
+    | '/admin/explicacoes'
+    | '/admin/logs'
+    | '/admin/missoes'
+    | '/admin/qre'
+    | '/admin/qualidade'
+    | '/admin/questoes'
+    | '/admin/rankings'
+    | '/admin/usuarios'
+    | '/arena/$salaId'
+    | '/cadernos/$id'
+    | '/editais/$id'
+    | '/simulados/$id'
+    | '/admin'
+    | '/arena'
+    | '/simulados/$id/relatorio'
+  id:
+    | '__root__'
+    | '/_app'
+    | '/auth'
+    | '/_app/admin'
+    | '/_app/amigos'
+    | '/_app/cadernos'
+    | '/_app/calendario'
+    | '/_app/ciclo'
+    | '/_app/configuracoes'
+    | '/_app/conquistas'
+    | '/_app/cronometro'
+    | '/_app/editais'
+    | '/_app/estatisticas'
+    | '/_app/historico'
+    | '/_app/insignias'
+    | '/_app/missoes'
+    | '/_app/perfil'
+    | '/_app/questoes'
+    | '/_app/rankings'
+    | '/_app/recomendacoes'
+    | '/_app/recompensas-desempenho'
+    | '/_app/recompensas-historico'
+    | '/_app/revisoes'
+    | '/_app/simulados'
+    | '/perfil/$username'
+    | '/_app/'
+    | '/_app/admin/arena'
+    | '/_app/admin/configuracoes'
+    | '/_app/admin/conquistas'
+    | '/_app/admin/disciplinas'
+    | '/_app/admin/editais'
+    | '/_app/admin/explicacoes'
+    | '/_app/admin/logs'
+    | '/_app/admin/missoes'
+    | '/_app/admin/qre'
+    | '/_app/admin/qualidade'
+    | '/_app/admin/questoes'
+    | '/_app/admin/rankings'
+    | '/_app/admin/usuarios'
+    | '/_app/arena/$salaId'
+    | '/_app/cadernos/$id'
+    | '/_app/editais/$id'
+    | '/_app/simulados/$id'
+    | '/_app/admin/'
+    | '/_app/arena/'
+    | '/_app/simulados/$id/relatorio'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  DashboardRoute: typeof DashboardRoute
+  AppRoute: typeof AppRouteWithChildren
+  AuthRoute: typeof AuthRoute
+  PerfilUsernameRoute: typeof PerfilUsernameRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteImport
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
+    '/_app': {
+      id: '/_app'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_app/': {
+      id: '/_app/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/perfil/$username': {
+      id: '/perfil/$username'
+      path: '/perfil/$username'
+      fullPath: '/perfil/$username'
+      preLoaderRoute: typeof PerfilUsernameRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/_app/simulados': {
+      id: '/_app/simulados'
+      path: '/simulados'
+      fullPath: '/simulados'
+      preLoaderRoute: typeof AppSimuladosRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/revisoes': {
+      id: '/_app/revisoes'
+      path: '/revisoes'
+      fullPath: '/revisoes'
+      preLoaderRoute: typeof AppRevisoesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/recompensas-historico': {
+      id: '/_app/recompensas-historico'
+      path: '/recompensas-historico'
+      fullPath: '/recompensas-historico'
+      preLoaderRoute: typeof AppRecompensasHistoricoRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/recompensas-desempenho': {
+      id: '/_app/recompensas-desempenho'
+      path: '/recompensas-desempenho'
+      fullPath: '/recompensas-desempenho'
+      preLoaderRoute: typeof AppRecompensasDesempenhoRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/recomendacoes': {
+      id: '/_app/recomendacoes'
+      path: '/recomendacoes'
+      fullPath: '/recomendacoes'
+      preLoaderRoute: typeof AppRecomendacoesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/rankings': {
+      id: '/_app/rankings'
+      path: '/rankings'
+      fullPath: '/rankings'
+      preLoaderRoute: typeof AppRankingsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/questoes': {
+      id: '/_app/questoes'
+      path: '/questoes'
+      fullPath: '/questoes'
+      preLoaderRoute: typeof AppQuestoesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/perfil': {
+      id: '/_app/perfil'
+      path: '/perfil'
+      fullPath: '/perfil'
+      preLoaderRoute: typeof AppPerfilRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/missoes': {
+      id: '/_app/missoes'
+      path: '/missoes'
+      fullPath: '/missoes'
+      preLoaderRoute: typeof AppMissoesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/insignias': {
+      id: '/_app/insignias'
+      path: '/insignias'
+      fullPath: '/insignias'
+      preLoaderRoute: typeof AppInsigniasRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/historico': {
+      id: '/_app/historico'
+      path: '/historico'
+      fullPath: '/historico'
+      preLoaderRoute: typeof AppHistoricoRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/estatisticas': {
+      id: '/_app/estatisticas'
+      path: '/estatisticas'
+      fullPath: '/estatisticas'
+      preLoaderRoute: typeof AppEstatisticasRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/editais': {
+      id: '/_app/editais'
+      path: '/editais'
+      fullPath: '/editais'
+      preLoaderRoute: typeof AppEditaisRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/cronometro': {
+      id: '/_app/cronometro'
+      path: '/cronometro'
+      fullPath: '/cronometro'
+      preLoaderRoute: typeof AppCronometroRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/conquistas': {
+      id: '/_app/conquistas'
+      path: '/conquistas'
+      fullPath: '/conquistas'
+      preLoaderRoute: typeof AppConquistasRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/configuracoes': {
+      id: '/_app/configuracoes'
+      path: '/configuracoes'
+      fullPath: '/configuracoes'
+      preLoaderRoute: typeof AppConfiguracoesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/ciclo': {
+      id: '/_app/ciclo'
+      path: '/ciclo'
+      fullPath: '/ciclo'
+      preLoaderRoute: typeof AppCicloRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/calendario': {
+      id: '/_app/calendario'
+      path: '/calendario'
+      fullPath: '/calendario'
+      preLoaderRoute: typeof AppCalendarioRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/cadernos': {
+      id: '/_app/cadernos'
+      path: '/cadernos'
+      fullPath: '/cadernos'
+      preLoaderRoute: typeof AppCadernosRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/amigos': {
+      id: '/_app/amigos'
+      path: '/amigos'
+      fullPath: '/amigos'
+      preLoaderRoute: typeof AppAmigosRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/admin': {
+      id: '/_app/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AppAdminRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/arena/': {
+      id: '/_app/arena/'
+      path: '/arena'
+      fullPath: '/arena/'
+      preLoaderRoute: typeof AppArenaIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/admin/': {
+      id: '/_app/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AppAdminIndexRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/_app/simulados/$id': {
+      id: '/_app/simulados/$id'
+      path: '/$id'
+      fullPath: '/simulados/$id'
+      preLoaderRoute: typeof AppSimuladosIdRouteImport
+      parentRoute: typeof AppSimuladosRoute
+    }
+    '/_app/editais/$id': {
+      id: '/_app/editais/$id'
+      path: '/$id'
+      fullPath: '/editais/$id'
+      preLoaderRoute: typeof AppEditaisIdRouteImport
+      parentRoute: typeof AppEditaisRoute
+    }
+    '/_app/cadernos/$id': {
+      id: '/_app/cadernos/$id'
+      path: '/$id'
+      fullPath: '/cadernos/$id'
+      preLoaderRoute: typeof AppCadernosIdRouteImport
+      parentRoute: typeof AppCadernosRoute
+    }
+    '/_app/arena/$salaId': {
+      id: '/_app/arena/$salaId'
+      path: '/arena/$salaId'
+      fullPath: '/arena/$salaId'
+      preLoaderRoute: typeof AppArenaSalaIdRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/admin/usuarios': {
+      id: '/_app/admin/usuarios'
+      path: '/usuarios'
+      fullPath: '/admin/usuarios'
+      preLoaderRoute: typeof AppAdminUsuariosRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/_app/admin/rankings': {
+      id: '/_app/admin/rankings'
+      path: '/rankings'
+      fullPath: '/admin/rankings'
+      preLoaderRoute: typeof AppAdminRankingsRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/_app/admin/questoes': {
+      id: '/_app/admin/questoes'
+      path: '/questoes'
+      fullPath: '/admin/questoes'
+      preLoaderRoute: typeof AppAdminQuestoesRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/_app/admin/qualidade': {
+      id: '/_app/admin/qualidade'
+      path: '/qualidade'
+      fullPath: '/admin/qualidade'
+      preLoaderRoute: typeof AppAdminQualidadeRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/_app/admin/qre': {
+      id: '/_app/admin/qre'
+      path: '/qre'
+      fullPath: '/admin/qre'
+      preLoaderRoute: typeof AppAdminQreRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/_app/admin/missoes': {
+      id: '/_app/admin/missoes'
+      path: '/missoes'
+      fullPath: '/admin/missoes'
+      preLoaderRoute: typeof AppAdminMissoesRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/_app/admin/logs': {
+      id: '/_app/admin/logs'
+      path: '/logs'
+      fullPath: '/admin/logs'
+      preLoaderRoute: typeof AppAdminLogsRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/_app/admin/explicacoes': {
+      id: '/_app/admin/explicacoes'
+      path: '/explicacoes'
+      fullPath: '/admin/explicacoes'
+      preLoaderRoute: typeof AppAdminExplicacoesRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/_app/admin/editais': {
+      id: '/_app/admin/editais'
+      path: '/editais'
+      fullPath: '/admin/editais'
+      preLoaderRoute: typeof AppAdminEditaisRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/_app/admin/disciplinas': {
+      id: '/_app/admin/disciplinas'
+      path: '/disciplinas'
+      fullPath: '/admin/disciplinas'
+      preLoaderRoute: typeof AppAdminDisciplinasRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/_app/admin/conquistas': {
+      id: '/_app/admin/conquistas'
+      path: '/conquistas'
+      fullPath: '/admin/conquistas'
+      preLoaderRoute: typeof AppAdminConquistasRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/_app/admin/configuracoes': {
+      id: '/_app/admin/configuracoes'
+      path: '/configuracoes'
+      fullPath: '/admin/configuracoes'
+      preLoaderRoute: typeof AppAdminConfiguracoesRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/_app/admin/arena': {
+      id: '/_app/admin/arena'
+      path: '/arena'
+      fullPath: '/admin/arena'
+      preLoaderRoute: typeof AppAdminArenaRouteImport
+      parentRoute: typeof AppAdminRoute
+    }
+    '/_app/simulados/$id/relatorio': {
+      id: '/_app/simulados/$id/relatorio'
+      path: '/relatorio'
+      fullPath: '/simulados/$id/relatorio'
+      preLoaderRoute: typeof AppSimuladosIdRelatorioRouteImport
+      parentRoute: typeof AppSimuladosIdRoute
     }
   }
 }
 
+interface AppAdminRouteChildren {
+  AppAdminArenaRoute: typeof AppAdminArenaRoute
+  AppAdminConfiguracoesRoute: typeof AppAdminConfiguracoesRoute
+  AppAdminConquistasRoute: typeof AppAdminConquistasRoute
+  AppAdminDisciplinasRoute: typeof AppAdminDisciplinasRoute
+  AppAdminEditaisRoute: typeof AppAdminEditaisRoute
+  AppAdminExplicacoesRoute: typeof AppAdminExplicacoesRoute
+  AppAdminLogsRoute: typeof AppAdminLogsRoute
+  AppAdminMissoesRoute: typeof AppAdminMissoesRoute
+  AppAdminQreRoute: typeof AppAdminQreRoute
+  AppAdminQualidadeRoute: typeof AppAdminQualidadeRoute
+  AppAdminQuestoesRoute: typeof AppAdminQuestoesRoute
+  AppAdminRankingsRoute: typeof AppAdminRankingsRoute
+  AppAdminUsuariosRoute: typeof AppAdminUsuariosRoute
+  AppAdminIndexRoute: typeof AppAdminIndexRoute
+}
+
+const AppAdminRouteChildren: AppAdminRouteChildren = {
+  AppAdminArenaRoute: AppAdminArenaRoute,
+  AppAdminConfiguracoesRoute: AppAdminConfiguracoesRoute,
+  AppAdminConquistasRoute: AppAdminConquistasRoute,
+  AppAdminDisciplinasRoute: AppAdminDisciplinasRoute,
+  AppAdminEditaisRoute: AppAdminEditaisRoute,
+  AppAdminExplicacoesRoute: AppAdminExplicacoesRoute,
+  AppAdminLogsRoute: AppAdminLogsRoute,
+  AppAdminMissoesRoute: AppAdminMissoesRoute,
+  AppAdminQreRoute: AppAdminQreRoute,
+  AppAdminQualidadeRoute: AppAdminQualidadeRoute,
+  AppAdminQuestoesRoute: AppAdminQuestoesRoute,
+  AppAdminRankingsRoute: AppAdminRankingsRoute,
+  AppAdminUsuariosRoute: AppAdminUsuariosRoute,
+  AppAdminIndexRoute: AppAdminIndexRoute,
+}
+
+const AppAdminRouteWithChildren = AppAdminRoute._addFileChildren(
+  AppAdminRouteChildren,
+)
+
+interface AppCadernosRouteChildren {
+  AppCadernosIdRoute: typeof AppCadernosIdRoute
+}
+
+const AppCadernosRouteChildren: AppCadernosRouteChildren = {
+  AppCadernosIdRoute: AppCadernosIdRoute,
+}
+
+const AppCadernosRouteWithChildren = AppCadernosRoute._addFileChildren(
+  AppCadernosRouteChildren,
+)
+
+interface AppEditaisRouteChildren {
+  AppEditaisIdRoute: typeof AppEditaisIdRoute
+}
+
+const AppEditaisRouteChildren: AppEditaisRouteChildren = {
+  AppEditaisIdRoute: AppEditaisIdRoute,
+}
+
+const AppEditaisRouteWithChildren = AppEditaisRoute._addFileChildren(
+  AppEditaisRouteChildren,
+)
+
+interface AppSimuladosIdRouteChildren {
+  AppSimuladosIdRelatorioRoute: typeof AppSimuladosIdRelatorioRoute
+}
+
+const AppSimuladosIdRouteChildren: AppSimuladosIdRouteChildren = {
+  AppSimuladosIdRelatorioRoute: AppSimuladosIdRelatorioRoute,
+}
+
+const AppSimuladosIdRouteWithChildren = AppSimuladosIdRoute._addFileChildren(
+  AppSimuladosIdRouteChildren,
+)
+
+interface AppSimuladosRouteChildren {
+  AppSimuladosIdRoute: typeof AppSimuladosIdRouteWithChildren
+}
+
+const AppSimuladosRouteChildren: AppSimuladosRouteChildren = {
+  AppSimuladosIdRoute: AppSimuladosIdRouteWithChildren,
+}
+
+const AppSimuladosRouteWithChildren = AppSimuladosRoute._addFileChildren(
+  AppSimuladosRouteChildren,
+)
+
+interface AppRouteChildren {
+  AppAdminRoute: typeof AppAdminRouteWithChildren
+  AppAmigosRoute: typeof AppAmigosRoute
+  AppCadernosRoute: typeof AppCadernosRouteWithChildren
+  AppCalendarioRoute: typeof AppCalendarioRoute
+  AppCicloRoute: typeof AppCicloRoute
+  AppConfiguracoesRoute: typeof AppConfiguracoesRoute
+  AppConquistasRoute: typeof AppConquistasRoute
+  AppCronometroRoute: typeof AppCronometroRoute
+  AppEditaisRoute: typeof AppEditaisRouteWithChildren
+  AppEstatisticasRoute: typeof AppEstatisticasRoute
+  AppHistoricoRoute: typeof AppHistoricoRoute
+  AppInsigniasRoute: typeof AppInsigniasRoute
+  AppMissoesRoute: typeof AppMissoesRoute
+  AppPerfilRoute: typeof AppPerfilRoute
+  AppQuestoesRoute: typeof AppQuestoesRoute
+  AppRankingsRoute: typeof AppRankingsRoute
+  AppRecomendacoesRoute: typeof AppRecomendacoesRoute
+  AppRecompensasDesempenhoRoute: typeof AppRecompensasDesempenhoRoute
+  AppRecompensasHistoricoRoute: typeof AppRecompensasHistoricoRoute
+  AppRevisoesRoute: typeof AppRevisoesRoute
+  AppSimuladosRoute: typeof AppSimuladosRouteWithChildren
+  AppIndexRoute: typeof AppIndexRoute
+  AppArenaSalaIdRoute: typeof AppArenaSalaIdRoute
+  AppArenaIndexRoute: typeof AppArenaIndexRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppAdminRoute: AppAdminRouteWithChildren,
+  AppAmigosRoute: AppAmigosRoute,
+  AppCadernosRoute: AppCadernosRouteWithChildren,
+  AppCalendarioRoute: AppCalendarioRoute,
+  AppCicloRoute: AppCicloRoute,
+  AppConfiguracoesRoute: AppConfiguracoesRoute,
+  AppConquistasRoute: AppConquistasRoute,
+  AppCronometroRoute: AppCronometroRoute,
+  AppEditaisRoute: AppEditaisRouteWithChildren,
+  AppEstatisticasRoute: AppEstatisticasRoute,
+  AppHistoricoRoute: AppHistoricoRoute,
+  AppInsigniasRoute: AppInsigniasRoute,
+  AppMissoesRoute: AppMissoesRoute,
+  AppPerfilRoute: AppPerfilRoute,
+  AppQuestoesRoute: AppQuestoesRoute,
+  AppRankingsRoute: AppRankingsRoute,
+  AppRecomendacoesRoute: AppRecomendacoesRoute,
+  AppRecompensasDesempenhoRoute: AppRecompensasDesempenhoRoute,
+  AppRecompensasHistoricoRoute: AppRecompensasHistoricoRoute,
+  AppRevisoesRoute: AppRevisoesRoute,
+  AppSimuladosRoute: AppSimuladosRouteWithChildren,
+  AppIndexRoute: AppIndexRoute,
+  AppArenaSalaIdRoute: AppArenaSalaIdRoute,
+  AppArenaIndexRoute: AppArenaIndexRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  DashboardRoute: DashboardRoute,
+  AppRoute: AppRouteWithChildren,
+  AuthRoute: AuthRoute,
+  PerfilUsernameRoute: PerfilUsernameRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
