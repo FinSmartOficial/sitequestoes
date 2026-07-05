@@ -65,7 +65,7 @@ export async function getQuestion(id: string): Promise<QuestionWithAlternatives>
   return data as QuestionWithAlternatives;
 }
 
-export type AnswerOrigin = "banco" | "simulado" | "revisao" | "arena" | "plano";
+export type AnswerOrigin = "banco" | "simulado" | "revisao" | "review" | "arena" | "plano";
 
 export interface RecordAnswerInput {
   question_id: string;
