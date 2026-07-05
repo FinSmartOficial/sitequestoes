@@ -1,5 +1,5 @@
 import { createMiddleware } from "@tanstack/react-start";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "./supabase";
 
 /**
  * Client-side function middleware that attaches the current Supabase

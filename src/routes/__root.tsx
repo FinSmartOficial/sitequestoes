@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import { AuthProvider } from "../contexts/AuthContext";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -77,18 +78,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Supabase Canvas is a web application development tool that uses Supabase for its backend." },
+      { title: "SiteQuestões — Plataforma de Estudos" },
+      { name: "description", content: "Plataforma de estudos com questões, dashboard de desempenho, revisões e acompanhamento de evolução." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Supabase Canvas is a web application development tool that uses Supabase for its backend." },
+      { property: "og:title", content: "SiteQuestões — Plataforma de Estudos" },
+      { property: "og:description", content: "Estude por questões, acompanhe desempenho e organize revisões em uma plataforma única." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Supabase Canvas is a web application development tool that uses Supabase for its backend." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a2c515ba-41ed-46a4-bca6-c7eddef3be44/id-preview-f9c20a24--e27d67e5-266a-4f1a-8dc9-ac223b66ea5b.lovable.app-1783215881609.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a2c515ba-41ed-46a4-bca6-c7eddef3be44/id-preview-f9c20a24--e27d67e5-266a-4f1a-8dc9-ac223b66ea5b.lovable.app-1783215881609.png" },
+      { name: "twitter:title", content: "SiteQuestões — Plataforma de Estudos" },
+      { name: "twitter:description", content: "Estude por questões, acompanhe desempenho e organize revisões em uma plataforma única." },
     ],
     links: [
       {
@@ -106,11 +105,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <head>
+    <html lang="en" suppressHydrationWarning>
+      <head suppressHydrationWarning>
         <HeadContent />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {children}
         <Scripts />
       </body>
@@ -123,8 +122,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <AuthProvider>
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </AuthProvider>
     </QueryClientProvider>
   );
 }

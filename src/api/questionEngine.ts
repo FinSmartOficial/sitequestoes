@@ -13,7 +13,6 @@
  *   - question_engine_adaptive
  */
 import { supabase } from "@/lib/supabase";
-import type { Database } from "@/integrations/supabase/types";
 
 // ---------------- RPC registry ----------------
 
@@ -24,7 +23,7 @@ export const QUESTION_ENGINE_RPC = {
   daily: "question_engine_daily",
   simulation: "question_engine_simulation",
   adaptive: "question_engine_adaptive",
-} as const satisfies Record<string, keyof Database["public"]["Functions"]>;
+} as const;
 
 export type QuestionEngineRpcName =
   (typeof QUESTION_ENGINE_RPC)[keyof typeof QUESTION_ENGINE_RPC];

@@ -4,9 +4,8 @@
  * Acesso direto às tabelas `notebooks` / `notebook_questions` foi eliminado.
  */
 import { supabase } from "@/lib/supabase";
-import type { Database } from "@/integrations/supabase/types";
 
-export type NotebookRow = Database["public"]["Tables"]["notebooks"]["Row"];
+export type NotebookRow = Record<string, unknown> & { id: string };
 
 export interface NotebookQuestionItem {
   notebook_question_id: string;
