@@ -11,7 +11,6 @@
  * erro e normaliza retorno nulo.
  */
 import { supabase } from "@/lib/supabase";
-import type { Database } from "@/integrations/supabase/types";
 
 // ---------------- RPC registry ----------------
 
@@ -24,7 +23,7 @@ export const AI_RPC = {
   diagnosis: "ai_study_diagnosis",
   priorities: "ai_study_priorities",
   recommendations: "ai_study_recommendations",
-} as const satisfies Record<string, keyof Database["public"]["Functions"]>;
+} as const;
 
 export type AiRpcName = (typeof AI_RPC)[keyof typeof AI_RPC];
 

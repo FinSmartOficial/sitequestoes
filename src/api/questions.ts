@@ -4,10 +4,9 @@
  * Acesso direto à tabela `questions` foi eliminado.
  */
 import { supabase } from "@/lib/supabase";
-import type { Database } from "@/integrations/supabase/types";
 
-export type QuestionRow = Database["public"]["Tables"]["questions"]["Row"];
-export type AlternativeRow = Database["public"]["Tables"]["alternatives"]["Row"];
+export type QuestionRow = Record<string, unknown> & { id: string };
+export type AlternativeRow = Record<string, unknown> & { id: string };
 
 export interface QuestionWithAlternatives extends QuestionRow {
   alternatives: AlternativeRow[];
@@ -66,7 +65,7 @@ export async function getQuestion(id: string): Promise<QuestionWithAlternatives>
   return data as QuestionWithAlternatives;
 }
 
-export type AnswerOrigin = Database["public"]["Enums"]["answer_origin"];
+export type AnswerOrigin = "banco" | "simulado" | "revisao" | "arena" | "plano";
 
 export interface RecordAnswerInput {
   question_id: string;

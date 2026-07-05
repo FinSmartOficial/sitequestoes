@@ -4,10 +4,9 @@
  * Acesso direto às tabelas `study_plans` / `study_plan_items` eliminado.
  */
 import { supabase } from "@/lib/supabase";
-import type { Database } from "@/integrations/supabase/types";
 
-export type StudyPlanRow = Database["public"]["Tables"]["study_plans"]["Row"];
-export type StudyPlanItemRow = Database["public"]["Tables"]["study_plan_items"]["Row"];
+export type StudyPlanRow = Record<string, unknown> & { id: string };
+export type StudyPlanItemRow = Record<string, unknown> & { id: string };
 
 export interface TodayPlanResult {
   plan: StudyPlanRow | null;
